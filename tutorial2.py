@@ -5,7 +5,7 @@ df = pd.read_csv('data/train.csv')
 df = df.drop(['Name', 'Ticket', 'Cabin'], axis=1)
 
 ###########################################################
-# We need to fill the NaN values rather than drop them
+# 1. We need to fill the NaN values rather than drop them
 # Improvments go here for training
 ###########################################################
 
@@ -30,7 +30,7 @@ df = df.dropna()
 df['Gender'] = df['Sex'].map({'female': 0, 'male':1}).astype(int)
 
 ###########################################################
-# Dummy variable improvement here
+# 2. Dummy variable improvement here
 ###########################################################
 
 #what we had before
@@ -52,7 +52,7 @@ df = df[cols]
 train_data = df.values
 
 ##########################################################
-# Modify with parameter tuning
+# 3. Modify with parameter tuning
 ##########################################################
 
 from sklearn.ensemble import RandomForestClassifier
@@ -84,7 +84,7 @@ df_test = pd.read_csv('data/test.csv')
 df_test = df_test.drop(['Name', 'Ticket', 'Cabin'], axis=1)
 
 ###########################################################
-# We need to fill the NaN values rather than drop them
+# 4. We need to fill the NaN values rather than drop them
 # Improvments go here for training
 ###########################################################
 
@@ -109,7 +109,7 @@ df_test = df_test.fillna(0)
 df_test['Gender'] = df_test['Sex'].map({'female': 0, 'male':1})
 
 ###########################################################
-# Dummy variable improvement here
+# 5. Dummy variable improvement here
 ###########################################################
 
 #what we had before
